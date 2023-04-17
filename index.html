@@ -8,6 +8,39 @@
         <h1>Generate a </h1>
         <h1 id="h1color">random password</h1>
         <h2>Never use an insecure password again</h2>
+        <!-- <div class="checkbox"> 
+            <div class="eachbox">
+                <input type="checkbox" id="numbers">
+                <label for="numbers">Numbers</label>
+            </div>
+            <div class="eachbox">
+                <input type="checkbox" id="letters">
+                <label for="letters">Letters</label>
+            </div>
+            <div class="eachbox">
+                <input type="checkbox" id="symbols">
+                <label for="symbols">Symbols</label>
+            </div>
+            
+        </div> -->
+
+        <div class="checkboxes">
+            <div class="checkbox" >
+                <label class="container"> Numbers
+                <input type="checkbox" id="numbers-cb" checked="checked">
+                <span class="checkmark"></span>  
+            </div>
+            <div class="checkbox" >
+                <label class="container"> Letters
+                <input type="checkbox" id="letters-cb" checked="checked">
+                <span class="checkmark"></span>  
+            </div>
+            <div class="checkbox" >
+                <label class="container"> Symbols
+                <input type="checkbox" id="symbols-cb" checked="checked">
+                <span class="checkmark"></span>  
+            </div>
+        </div>
         <button class="btn" id="getpassword-btn" onclick="getPassword()">Generate passwords</button>
         <div id="passwords">
             <div id="password1"></div>
