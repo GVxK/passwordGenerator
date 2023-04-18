@@ -95,5 +95,5 @@ function showSnackBar() {
     //this is where the class name will be added & removed to activate the css
     sb.className = "show";
   
-    setTimeout(()=>{ sb.className = sb.className.replace("show", ""); }, 2000);
+    setTimeout(()=>{ sb.className = sb.className.replace("show", ""); }, 1500);
   }
