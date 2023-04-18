@@ -10,6 +10,9 @@ const numSymb = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "~","`","!","
 const letSymb = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","~","`","!","@","#","$","%","^","&","*","(",")","_","-","+","=","{","[","}","]",",","|",":",";","<",">",".","?","/"]
 let passwordLength = 20
 let passwordvar = ""
+let password1 = []
+let password2 = [] 
+
 
 //Elements
 let password1El = document.getElementById("password1")
@@ -19,16 +22,19 @@ let lettersCb = document.getElementById("letters-cb")
 let symbolsCb = document.getElementById("symbols-cb")
 let inputVa = document.getElementById("input-p")
 let test = document.getElementById("test")
+password1El.textContent = " "
+password2El.textContent = " "
 // test.textContent = inputVa
+
 //Value
 
 //Functions
 function getPassword() {
+  
     password1El.textContent = " "
     password2El.textContent = " "
     let password1 = []
-    let password2 = []
-    
+    let password2 = [] 
     
 
     // if (inputVa == 1) {
@@ -109,7 +115,7 @@ function getPassword() {
 
 function copyCb() {
     
-    navigator.clipboard.writeText(password1El.value)
-    alert("Copied the text: " + copyText.value)
+    navigator.clipboard.writeText("password1El").value
+    alert("Copied the text: " + password1El)
 }
 
