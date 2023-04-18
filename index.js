@@ -8,7 +8,7 @@ const symbols = ["~","`","!","@","#","$","%","^","&","*","(",")","_","-","+","="
 const numLet = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
 const numSymb = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "~","`","!","@","#","$","%","^","&","*","(",")","_","-","+","=","{","[","}","]",",","|",":",";","<",">",".","?","/"]
 const letSymb = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","~","`","!","@","#","$","%","^","&","*","(",")","_","-","+","=","{","[","}","]",",","|",":",";","<",">",".","?","/"]
-let passwordLength = 100
+let passwordLength = 20
 let passwordvar = ""
 
 //Elements
@@ -17,8 +17,10 @@ let password2El = document.getElementById("password2")
 let numbersCb = document.getElementById("numbers-cb")
 let lettersCb = document.getElementById("letters-cb")
 let symbolsCb = document.getElementById("symbols-cb")
-
-
+let inputVa = document.getElementById("input-p")
+let test = document.getElementById("test")
+// test.textContent = inputVa
+//Value
 
 //Functions
 function getPassword() {
@@ -26,6 +28,18 @@ function getPassword() {
     password2El.textContent = " "
     let password1 = []
     let password2 = []
+    
+    
+
+    // if (inputVa == 1) {
+    //      passwordLength = 1
+    // } else if(inputVa === 2) {
+    //      passwordLength = 2
+    // } else {
+    //      passwordLength = 20
+    // }
+
+    
      
     if (numbersCb.checked === true && lettersCb.checked === true && symbolsCb.checked === true) {
     for (let i = 0; i < passwordLength; i++){
@@ -92,4 +106,10 @@ function getPassword() {
         }  
     }
 } 
+
+function copyCb() {
+    
+    navigator.clipboard.writeText(password1El.value)
+    alert("Copied the text: " + copyText.value)
+}
 

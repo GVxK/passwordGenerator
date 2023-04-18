@@ -23,8 +23,12 @@
             </div>
             
         </div> -->
-
+        <h4 id="test"></h4>
         <div class="checkboxes">
+            <div >
+                <p>Number of characters: <input type="text" id="input-p" placeholder="- Max. 20 -">  </p>
+                
+            </div>
             <div class="checkbox" >
                 <label class="container"> Numbers
                 <input type="checkbox" id="numbers-cb" checked="checked">
@@ -43,8 +47,20 @@
         </div>
         <button class="btn" id="getpassword-btn" onclick="getPassword()">Generate passwords</button>
         <div id="passwords">
-            <div id="password1"></div>
-            <div id="password2"></div>
+            <div id="password11">
+                 <div id="password1">
+                </div>
+                <div>
+                    <button id="copy" onclick="copyCb()"></button>
+                </div>
+            </div>
+            <div id="password22">
+                <div id="password2">
+                </div>
+                <div>
+                    <button id="copy2" onclick="copyCb()"></button>
+                </div>
+            </div>
         </div>
         <script src="index.js"></script>
     </body>
