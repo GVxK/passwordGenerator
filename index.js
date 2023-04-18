@@ -29,22 +29,24 @@ password2El.textContent = " "
 
 //Functions
 function checks() {
-if (numbersCb.checked === true) {
-    characters.push(...numbers)
-  } else {
-
-  }
+    if (numbersCb.checked === true) {
+        characters.push(...numbers)
+      } 
+    if (lettersCb.checked === true) {
+        characters.push(...letters)
+      } 
+    if (symbolsCb.checked === true) {
+        characters.push(...symbols)
+      }
+    if (inputVa.value > 20) {
+        inputVa.value = 20
+    }
 
 }
 
 
 function getPassword() {
-    let characters = []; 
-     numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
- letters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
- symbols = ["~","`","!","@","#","$","%","^","&","*","(",")","_","-","+","=","{","[","}","]",",","|",":",";","<",">",".","?","/"]
-    // checks()
-    
+    let characters = [];     
     password1El.textContent = " "
     password2El.textContent = " "
     let password1 = []
@@ -61,6 +63,7 @@ function getPassword() {
     if (inputVa.value > 20) {
         inputVa.value = 20
     }
+    // checks()
    
     for (let i = 0; i < inputVa.value; i++){
         let passwordvar = Math.floor(Math.random()*characters.length)
@@ -74,5 +77,23 @@ function getPassword() {
 
 function copyCb() {
     
-    navigator.clipboard.writeText(password1El.textContent).value
+    if (password1El.textContent != " "){
+        navigator.clipboard.writeText(password2El.textContent).value
+    showSnackBar()
+    }
 }
+function copyCb2() {
+    if (password2El.textContent != " "){
+        navigator.clipboard.writeText(password2El.textContent).value
+    showSnackBar()
+    }
+    
+}
+function showSnackBar() {
+    var sb = document.getElementById("snackbar");
+  
+    //this is where the class name will be added & removed to activate the css
+    sb.className = "show";
+  
+    setTimeout(()=>{ sb.className = sb.className.replace("show", ""); }, 2000);
+  }
